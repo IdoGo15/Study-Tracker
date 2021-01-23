@@ -2,6 +2,8 @@ const express = require('express');
 cors = require("cors");
 const app = express();
 require('dotenv').config();
+const path = require('path');
+const serveStatic = require('serve-static');
 
 const {mongoose} = require('./db/mongoose');
 
@@ -24,8 +26,10 @@ app.use(function (req, res, next) {
 
 app.use(cors());
 
-const { Course } = require('./db/models/course.model');
-const { Lecture } = require('./db/models/lecture.model');
+app.use(serveStatic(__dirname + '/frontend/dist'));
+
+const { Course } = require(path.join(__dirname,'./db/models/course.model'));
+const { Lecture } = require(path.join(__dirname,'./db/models/lecture.model'));
 
 //Get all courses
 app.get('/courses', (req,res) => {
@@ -103,7 +107,7 @@ app.delete('/courses/:courseId/lectures/:lectureId', (req, res) => {
   });
 });
 
-const port = process.env.PORT || 8080;
+const port = process.env.PORT || 3000;
 
 app.listen(port, () => {
   console.log(`Server is listening on port ${port}`);
