@@ -1,0 +1,16 @@
+@import "../../../styles.scss";
+
+mat-card {
+  width: 300px;
+  max-width: 600px;
+  margin: 2em auto;
+  text-align: center;
+}
+
+mat-form-field {
+  display: block;
+}
+
+.title {
+  float: left;
+}

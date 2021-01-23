@@ -1,0 +1,24 @@
+<div class="centered-content">
+  <mat-card>
+
+    <mat-card-title>Edit Lecture</mat-card-title>
+
+    <mat-form-field appearance="outline" class="new-course-field my-1">
+      <mat-label>Edit Lecture Name</mat-label>
+      <input [(ngModel)]="lectureT" matInput type="text" [formControl]="nameFormControl" [errorStateMatcher]="matcher"
+       placeholder="Enter lecture name...">
+       <mat-error *ngIf="nameFormControl.hasError('required')">
+        Lecture name is <strong>required</strong>
+      </mat-error>
+    </mat-form-field>
+
+    <div class="buttons">
+
+      <button mat-button (click)="goHome()">Cancle</button>
+
+      <button mat-button class="ml-2" (click)="updateLecture()" [disabled]="nameFormControl.hasError('required')">Save</button>
+
+    </div>
+  </mat-card>
+
+</div>

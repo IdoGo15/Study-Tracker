@@ -1,0 +1,252 @@
+@import "../../../theme.scss";
+@import "../../../styles.scss";
+
+.zoom-manager-container {
+  display: flex;
+  width: 90%;
+  height: 90%;
+  max-width: 1000px;
+  max-height: 680px;
+
+  button {
+    background-color: $accent;
+    color: white;
+  }
+}
+
+.sidebar {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  background: white;
+  padding: 42px 30px;
+  border-top-left-radius: 8px;
+  border-bottom-left-radius: 8px;
+  background: white;
+
+  mat-list-item {
+    outline: none;
+  }
+
+  button {
+    outline: none;
+  }
+}
+
+.mainTitle {
+  letter-spacing: 1px;
+  font-family: "Lato";
+  margin: 0;
+  color: $primary;
+  text-transform: uppercase;
+}
+
+.content-lecture-container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  padding: 42px 30px;
+  background: #f4f4f4;
+  border-top-right-radius: 8px;
+  border-bottom-right-radius: 8px;
+
+  .top-bar {
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: space-between;
+
+    button {
+      background-color: $accent;
+      outline: none;
+    }
+  }
+
+  mat-selection-list {
+    outline: none;
+  }
+}
+
+mat-list,
+mat-selection-list {
+  margin-top: 0px;
+  flex-grow: 1;
+  max-height: 450px;
+  overflow: auto;
+}
+
+.lecture-item {
+  border-radius: 5px;
+  width: 100%;
+  color: #5f5f5f;
+  margin-bottom: 5px;
+  background: white;
+}
+
+.course-item {
+  border-radius: 5px;
+  width: 100%;
+  color: #5f5f5f;
+  margin-bottom: 5px;
+  &:hover {
+    background: #f4f4f4;
+  }
+
+  &.is-active {
+    background-color: #b0bec5;
+  }
+}
+
+.lecture-list {
+  display: flex;
+  background: white;
+  border-radius: 5px;
+  margin-top: 10px;
+  align-items: center;
+
+  cursor: pointer;
+}
+
+mat-selection-list {
+  padding-top: 0px;
+  margin-top: 0px;
+  max-height: 450px;
+  overflow: auto;
+
+  .lecture-content {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+    .lecture-details {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      h6 {
+        color: #5f5f5f;
+      }
+    }
+
+    &:hover {
+      .buttons {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+    .buttons {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      transition: opacity 0.2s;
+      opacity: 0;
+      transform: scale(0.9);
+
+      button {
+        background: none;
+        outline: none;
+      }
+
+      .dltbtn {
+        color: red;
+        background: none;
+      }
+      .editbtn {
+        color: grey;
+        background: none;
+      }
+    }
+  }
+}
+
+.settingsBtn {
+  border-radius: 50%;
+  outline: none;
+}
+
+::ng-deep .mat-select-arrow {
+  opacity: 0;
+}
+
+button {
+  outline: none;
+}
+
+h3,
+h6 {
+  padding: 0px;
+  margin: 0px;
+  line-height: 1.5;
+}
+
+.example-container {
+  width: 500px;
+  height: 300px;
+  border: 1px solid rgba(0, 0, 0, 0.5);
+}
+
+.example-sidenav-content {
+  display: flex;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+}
+
+.sidenav {
+  padding: 20px;
+  width: 80%;
+  height: 100%;
+  background-color: white;
+
+  .mAddCourseBtn {
+    width: 80%;
+    background-color: $accent;
+    color: white;
+  }
+}
+
+mat-drawer-container {
+  border-radius: 5px;
+}
+
+.m-zoom-manager-container {
+  width: 90%;
+  height: 90%;
+  background-color: #f4f4f4;
+}
+
+.lecture-container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.m-top-bar {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+
+  button {
+    background: $accent;
+    align-items: center;
+    justify-content: center;
+    color: #f4f4f4;
+  }
+
+  .m-menubtn {
+    background-color: inherit;
+    color: black;
+    padding: 0;
+    margin: 0;
+  }
+}
+
+.m-addLectureBtn {
+  width: 50%;
+  align-content: center;
+  align-self: center;
+}

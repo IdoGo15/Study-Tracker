@@ -1,0 +1,148 @@
+<div class="centered-content" *ngIf="this.innerWidth <= 500">
+  <mat-drawer-container class="m-zoom-manager-container" autosize>
+    <mat-drawer #drawer class="sidenav pt-4" mode="over">
+
+        <h1 class="mainTitle mb-4">Courses</h1>
+
+        <mat-list>
+          <mat-list-item class="course-item" *ngFor="let course of courses" [routerLink]="['/courses',course._id]"
+             routerLinkActive="is-active">
+             <p>{{course.title}}</p>
+          </mat-list-item>
+         </mat-list>
+
+         <button class="mAddCourseBtn ml-4 mt-5" mat-stroked-button routerLink="/new-course">+ New Course</button>
+
+    </mat-drawer>
+
+    <div class="lecture-container">
+
+      <div class="m-top-bar mt-4 px-3">
+        <button class="m-menubtn" type="button" mat-icon-button (click)="drawer.toggle()">
+          <mat-icon color="black">menu</mat-icon>
+        </button>
+        <h1 class="mainTitle mx-auto">Lectures</h1>
+        <button mat-icon-button [matMenuTriggerFor]="menu" class="setBtn"><mat-icon>settings</mat-icon></button>
+        <mat-menu #menu="matMenu" xPosition="before">
+          <button mat-menu-item (click)="onEditCourseClick()">
+            <mat-icon>edit</mat-icon>
+            <span>Edit Course</span>
+          </button>
+          <button mat-menu-item (click)="onDeleteCourseClick()">
+            <mat-icon class="text-danger">delete</mat-icon>
+            <span class="text-danger">Delete Course</span>
+          </button>
+        </mat-menu>
+      </div>
+
+      <div class="my-auto">
+      <mat-selection-list [multiple]="false">
+        <mat-list-option class="lecture-item" *ngFor="let lecture of lectures">
+
+          <div class="lecture-content">
+
+            <mat-checkbox [checked]="lecture.completed" (click)="onLectureComplete(lecture)" class="mt-2 ml-3">
+              <div class="lecture-details">
+                <h3>{{lecture.title}}</h3>
+                <h6 class="">modified: {{lecture.modified}}</h6>
+              </div>
+            </mat-checkbox>
+
+            <div class="buttons" style="opacity: 1;">
+              <button mat-icon-button [routerLink]="['lectures',lecture._id,'edit-lecture']">
+                <mat-icon class="editbtn">edit</mat-icon>
+              </button>
+              <button mat-icon-button (click)="onLectureDeleteClick(lecture._id)">
+                <mat-icon class="dltbtn">delete_outline</mat-icon>
+              </button>
+            </div>
+          </div>
+        </mat-list-option>
+      </mat-selection-list>
+    </div>
+
+      <button mat-flat-button color="accent" class="m-addLectureBtn my-auto" routerLink="./new-lecture">
+        + Add Lecture
+      </button>
+
+    </div>
+
+  </mat-drawer-container>
+
+</div>
+
+
+<div class="centered-content" *ngIf="this.innerWidth > 500">
+  <div class="zoom-manager-container row">
+     <div class="sidebar col-4">
+
+      <h1 class="mainTitle mb-3">Courses</h1>
+
+      <mat-list>
+        <mat-list-item class="course-item" *ngFor="let course of courses" [routerLink]="['/courses',course._id]"
+           routerLinkActive="is-active">
+           <p>{{course.title}}</p>
+        </mat-list-item>
+       </mat-list>
+
+       <button class="mt-auto" mat-stroked-button routerLink="/new-course" >+ New Course</button>
+    </div>
+
+    <div class="content-lecture-container col-8">
+      <div>
+        <div class="top-bar">
+          <h1 class="mainTitle mb-2">
+            Lectures
+          </h1>
+          <button mat-icon-button [matMenuTriggerFor]="menu" class="ml-auto">
+            <mat-icon>settings</mat-icon>
+          </button>
+          <mat-menu #menu="matMenu" xPosition="before">
+            <button mat-menu-item (click)="onEditCourseClick()">
+              <mat-icon>edit</mat-icon>
+              <span>Edit Course</span>
+            </button>
+            <button mat-menu-item (click)="onDeleteCourseClick()">
+              <mat-icon class="text-danger">delete</mat-icon>
+              <span class="text-danger">Delete Course</span>
+            </button>
+          </mat-menu>
+        </div>
+
+        <!-- Lecture Elements -->
+        <mat-selection-list [multiple]="false">
+          <mat-list-option class="lecture-item" *ngFor="let lecture of lectures">
+
+            <div class="lecture-content">
+
+              <mat-checkbox [checked]="lecture.completed" (click)="onLectureComplete(lecture)" class="mt-2 ml-3">
+                <div class="lecture-details">
+                  <h3>{{lecture.title}}</h3>
+                  <h6 class="">modified: {{lecture.modified}}</h6>
+                </div>
+              </mat-checkbox>
+
+              <div class="buttons">
+                <button mat-icon-button [routerLink]="['lectures',lecture._id,'edit-lecture']">
+                  <mat-icon class="editbtn">edit</mat-icon>
+                </button>
+                <button mat-icon-button (click)="onLectureDeleteClick(lecture._id)">
+                  <mat-icon class="dltbtn">delete_outline</mat-icon>
+                </button>
+              </div>
+            </div>
+          </mat-list-option>
+        </mat-selection-list>
+      </div>
+
+        <button mat-fab class="mt-auto ml-auto" routerLink="./new-lecture">
+          <span class="material-icons">
+            add
+            </span>
+        </button>
+
+    </div>
+
+  </div>
+</div>
+

@@ -1,0 +1,41 @@
+@import "../../../styles.scss";
+
+mat-card {
+  display: flex;
+  flex-direction: column;
+
+  .buttons {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    font-size: 200px;
+  }
+
+  mat-form-field {
+    :hover {
+      outline: none;
+    }
+  }
+}
+
+button {
+  outline: none;
+}
+
+.new-course-field {
+  width: 300px;
+}
+
+mat-form-field {
+  &:hover {
+    outline-color: yellow;
+  }
+}
+
+:disabled {
+  background-color: #f4f4f4;
+}
+
+mat-card-title {
+  color: $primary;
+}

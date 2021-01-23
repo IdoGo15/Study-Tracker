@@ -1,0 +1,33 @@
+$enable-responsive-font-sizes: true;
+
+$primary: #2196f3;
+$accent: #f50057;
+$warn: red;
+
+.centered-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100%;
+  background-color: $primary;
+}
+
+.title {
+  font-family: "Lato";
+  text-transform: uppercase;
+  color: $primary;
+}
+
+mat-card {
+  background: white;
+}
+
+button {
+  background: $accent;
+  color: #f4f4f4;
+}
+
+mat-list-item {
+  cursor: pointer;
+}
