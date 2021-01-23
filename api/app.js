@@ -1,6 +1,7 @@
 const express = require('express');
 cors = require("cors");
 const app = express();
+require('dotenv').config();
 
 const {mongoose} = require('./db/mongoose');
 
@@ -102,6 +103,8 @@ app.delete('/courses/:courseId/lectures/:lectureId', (req, res) => {
   });
 });
 
-app.listen(3000, () => {
-  console.log('Server is listening on port 3000');
+const port = process.env.PORT || 8080;
+
+app.listen(port, () => {
+  console.log(`Server is listening on port ${port}`);
 });
