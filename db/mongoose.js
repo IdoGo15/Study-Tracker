@@ -1,8 +1,7 @@
-const { keys } = require('lodash');
 const mongoose = require('mongoose');
 
 mongoose.Promise = global.Promise;
-mongoose.connect(`mongodb+srv://idogo:Aa146814@zoom-tracker.oqolt.mongodb.net/zoom-tracker?retryWrites=true&w=majority`,
+mongoose.connect(`mongodb+srv://@zoom-tracker.oqolt.mongodb.net/zoom-tracker?retryWrites=true&w=majority`,
  { useNewUrlParser: true }).then(()=> {
   console.log('Connected to MongoDB successfully :)');
 }).catch((e) => {
