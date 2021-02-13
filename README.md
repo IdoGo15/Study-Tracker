@@ -4,7 +4,7 @@ Zoom-Tracker is my first project using Angular. I developed this app as a soluti
 The app allows the user to add, edit and delete courses and lectures, as well as mark them as completed or not.
 In addition, I made it fit for mobile view as well as web.
 
-Demo: [https://zoom-tracker.netlify.app/](https://zoom-tracker.netlify.app/)
+Demo: [https://study-tracker.netlify.app/](https://study-tracker.netlify.app/)
 
 ## Table Of Contents
 - [Zoom Tracker](#ZoomTracker)
