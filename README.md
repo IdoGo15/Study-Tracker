@@ -7,7 +7,7 @@ In addition, I made it fit for mobile view as well as web.
 Demo: [https://study-tracker.netlify.app/](https://study-tracker.netlify.app/)
 
 ## Table Of Contents
-- [Zoom Tracker](#ZoomTracker)
+- [Study Tracker](#StudyTracker)
   * [Running the project](#running-the-project)
   * [Screenshots](#screenshots)
     + [Main View](#main-view)
