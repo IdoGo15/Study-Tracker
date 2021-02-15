@@ -1,6 +1,6 @@
-# Zoom Tracker
+# Study Tracker
 
-Zoom-Tracker is my first project using Angular. I developed this app as a solution to a problem I faced during the academic studies semester - tracking my viewing content in Zoom.
+Study Tracker is my first project using Angular. I developed this app as a solution to a problem I faced during the academic studies semester - tracking my viewing content in Zoom.
 The app allows the user to add, edit and delete courses and lectures, as well as mark them as completed or not.
 In addition, I made it fit for mobile view as well as web.
 
